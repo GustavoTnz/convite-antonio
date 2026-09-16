@@ -6,7 +6,6 @@
   <title>Convite de Aniversário — Antônio Benício</title>
   <meta name="description" content="Convite interativo dos 2 aninhos do Antônio Benício — tema Hulk Baby." />
 
-  <!-- Fontes: "Bangers" para o clima de quadrinho, "Baloo 2" (arredondada e fofa) para o texto do dia a dia -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,11 +14,8 @@
 </head>
 <body>
 
-  <!-- ===================== TELA PRINCIPAL ===================== -->
   <div class="phone">
 
-    <!-- Fundo decorativo: nuvens, estrelas e pontilhado (halftone) de quadrinho,
-         tudo sutil e atrás do conteúdo (não usa nenhum arquivo de imagem) -->
     <div class="bg-deco" aria-hidden="true">
       <span class="cloud cloud--1"></span>
       <span class="cloud cloud--2"></span>
@@ -35,10 +31,8 @@
       <span class="dots dots--3"></span>
     </div>
 
-    <!-- Conteúdo rolável -->
     <main class="content">
 
-      <!-- Herói ilustrado: imagem enviada pela família (a arte já traz seu próprio "POW!" e estrelas) -->
       <section class="hero">
         <img
           src="assets/hulk.png"
@@ -47,13 +41,8 @@
         >
       </section>
 
-      <!-- Nome e idade -->
       <section class="title-block">
-        <!-- Nome arqueado com SVG + textPath: dois textos sobrepostos no mesmo
-             caminho (um branco mais "gordo" atrás, um verde por cima) criam o
-             efeito de adesivo com borda grossa, mantendo a curva suave nativa
-             do SVG em vez de tentar simular isso só com CSS. -->
-        <svg class="name-svg" viewBox="0 0 400 130" role="img" aria-label="Antônio Benício">
+         <svg class="name-svg" viewBox="0 0 400 130" role="img" aria-label="Antônio Benício">
           <defs>
             <path id="nameArc" d="M 14 108 Q 200 44 386 108" fill="none"/>
           </defs>
@@ -85,7 +74,6 @@
         </p>
       </section>
 
-      <!-- Data e hora -->
       <section class="datetime-card">
         <div class="datetime-item">
           <svg class="datetime-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/></svg>
@@ -98,7 +86,6 @@
         </div>
       </section>
 
-      <!-- Botão que abre o modal com o endereço e o mapa -->
       <section class="address-trigger-wrap">
         <button class="address-trigger" data-modal="modal-local">
           <span class="address-trigger__icon">📍</span>
@@ -106,7 +93,6 @@
         </button>
       </section>
 
-      <!-- Texto do convite -->
       <section class="invite-text">
         <p>
           Nosso pequeno <strong>Antônio</strong> está completando 2 anos e chegou a
@@ -115,12 +101,9 @@
         </p>
       </section>
 
-      <!-- Espaço reservado para o cenário da cidade + a barra inferior não cobrirem o fim do conteúdo -->
       <div class="content-spacer"></div>
     </main>
 
-    <!-- Cenário decorativo da cidade: encostado no limite inferior real da tela,
-         por trás da barra inferior (translúcida), com BOOM! e o soco sobrepostos -->
     <section class="skyline-section" aria-hidden="true">
       <div class="skyline-img-wrap">
         <img src="assets/cidade.png" alt="" class="skyline-img">
@@ -129,7 +112,6 @@
       <img src="assets/soco.png" alt="" class="skyline-decor skyline-decor--soco">
     </section>
 
-    <!-- ===================== MENU INFERIOR (estilo app) ===================== -->
     <nav class="tabbar">
       <button class="tabbar__btn tabbar__btn--main" data-modal="modal-rsvp">
         <span class="tabbar__icon">✅</span>
@@ -137,7 +119,6 @@
       </button>
     </nav>
 
-    <!-- ===================== MODAL 1: LOCAL DA FESTA ===================== -->
     <div class="modal" id="modal-local" aria-hidden="true">
       <div class="modal__backdrop" data-close></div>
       <div class="modal__sheet" role="dialog" aria-modal="true" aria-labelledby="modal-local-title">
@@ -160,14 +141,12 @@
       </div>
     </div>
 
-    <!-- ===================== MODAL 2: CONFIRMAR PRESENÇA ===================== -->
     <div class="modal" id="modal-rsvp" aria-hidden="true">
       <div class="modal__backdrop" data-close></div>
       <div class="modal__sheet" role="dialog" aria-modal="true" aria-labelledby="modal-rsvp-title">
         <span class="modal__handle" aria-hidden="true"></span>
         <h2 id="modal-rsvp-title" class="modal__title">Vamos celebrar juntos?</h2>
 
-        <!-- Estado 1: formulário -->
         <form id="rsvp-form" class="rsvp-form">
           <label class="field">
             <span class="field__label">Seu nome</span>
@@ -198,7 +177,6 @@
             </div>
           </fieldset>
 
-          <!-- Só aparece quando "Vai levar acompanhante?" = Sim (ver script.js) -->
           <label class="field field--companion-count" id="companion-count-field">
             <span class="field--companion-count__inner">
               <span class="field__label">Quantos acompanhantes?</span>
@@ -210,7 +188,6 @@
           <button type="button" class="btn btn--ghost" data-close>Voltar</button>
         </form>
 
-        <!-- Estado 2: confirmado (escondido até o envio) -->
         <div id="rsvp-success" class="rsvp-success" hidden>
           <div class="rsvp-success__icon">🎉</div>
           <p><strong>Presença confirmada!</strong></p>
@@ -220,7 +197,6 @@
       </div>
     </div>
 
-    <!-- ===================== MODAL 3: SOBRE O ANTÔNIO ===================== -->
     <div class="modal" id="modal-about" aria-hidden="true">
       <div class="modal__backdrop" data-close></div>
       <div class="modal__sheet" role="dialog" aria-modal="true" aria-labelledby="modal-about-title">
@@ -228,7 +204,6 @@
         <h2 id="modal-about-title" class="modal__title">👦 Sobre o Antônio</h2>
         <p class="modal__intro">Vai presentear o nosso herói? Aqui vão umas dicas:</p>
 
-        <!-- TODO: os campos abaixo são placeholders — edite com as informações reais do Antônio -->
         <ul class="about-list">
           <li><span class="about-list__icon">👕</span><span><strong>Ele usa:</strong> tamanho 2 (preencher)</span></li>
           <li><span class="about-list__icon">👟</span><span><strong>Calçado:</strong> número (preencher)</span></li>
